@@ -52,8 +52,5 @@ As you can see by looking at the code, the validation process relies upon the **
 
 That's basically it: the above code is released under MIT license, meaning that you're free to use it for any project or use it to develop your own e-mail validatior function.
 
-## Conclusion
-That's it, at least for now: if you like the above code, feel free to give us a feedback in the comments section of this post.
-
 ## References
 * [EMail Address Validation in C# and ASP.NET Core](https://www.ryadel.com/en/email-address-validation-c-sharp-asp-net-core/)
