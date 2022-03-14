@@ -16,7 +16,7 @@ To better understand such concept, consider the following email addresses:
 * !def!xyz%abc@example.com
 * _somename@example.com
 
-[alert type="info"]The above samples are taken from RFC 3696, Application Techniques for Checking and Transformation of Names, written by the author of the SMTP protocol (RFC 2821) as a human readable guide to SMTP.[/alert]
+*The above samples are taken from RFC 3696, Application Techniques for Checking and Transformation of Names, written by the author of the SMTP protocol (RFC 2821) as a human readable guide to SMTP.*
 
 As strange as it might seem, all the above e-mail addresses are "valid": or at least they were, according to RFC 2822 section 3.4.1, until it was obsoleted by  RFC 5322. However, even RFC 5322  takes as "valid" email addresses using a syntax that are widely considered to be simultaneously too strict (before the "@" character), too vague (after the "@" character), and too lax (allowing comments, whitespace characters, and quoted strings).
 
