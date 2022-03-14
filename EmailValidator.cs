@@ -7,8 +7,6 @@ public static class EmailValidator
 
     public static readonly Regex EmailValidation_Regex_Compiled = new Regex(EmailValidation_Regex, RegexOptions.IgnoreCase);
 
-    public static readonly string EmailValidation_Regex_JS = $"/{EmailValidation_Regex}/";
-
     /// <summary>
     /// Checks if the given e-mail is valid using various techniques
     /// </summary>
