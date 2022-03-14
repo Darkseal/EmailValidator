@@ -32,32 +32,4 @@ public static class EmailValidator
         }
         return isValid;
     }
-
-    public static async Task<bool> SendEmail_ToUser(WebContext context, string name, User user, string subject, string body, bool ignoreNotificationSettings = false, string emailAddressKey = null)
-    {
-        var result = false;
-        try
-        {
-            subject = EmailHelper.ToPinkoPlayFormat(subject);
-            body = EmailHelper.ToPinkoPlayFormat(body);
-
-            if (ignoreNotificationSettings || !user.DisableEmailNotifications)
-            {
-                context.Logger.LogInformation("[{context:l}] Sending {name} e-mail to {userEmail}...", context.CallerInfo, name, user.Email);
-                await context.EmailSender.SendEmailAsync(user.Email, GetSubject(context, subject), body);
-                context.Logger.LogInformation("[{context:l}] {name} e-mail to {userEmail} sent.", context.CallerInfo, name, user.Email);
-            }
-            else
-                context.Logger.LogInformation("[{context:l}] {name} e-mail to {userEmail} not sent (DisableEmailNotifications set to TRUE).", context.CallerInfo, name, user.Email);
-            if (!string.IsNullOrEmpty(emailAddressKey))
-                await SendEmail_ToAdmins(context, name, emailAddressKey, subject, body);
-            result = true;
-        }
-        catch (Exception e)
-        {
-            context.Logger.LogError(e, "[{context:l}] e-mail failed for user {userId} ({errorMessage}).", context.CallerInfo, user.Id, e.Message);
-            result = false;
-        }
-        return result;
-    }
 }
